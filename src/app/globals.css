@@ -1,3 +1,71 @@
 @import "tailwindcss";
 
+/* Light */
+@font-face {
+  font-family: 'jeearchive-login-font';
+  src: url('../../public/fonts/Satoshi-Light.woff2') format('woff2'),
+       url('../../public/fonts/Satoshi-Light.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
 
+/* Regular */
+@font-face {
+  font-family: 'jeearchive-login-font';
+  src: url('../../public/fonts/Satoshi-Regular.woff2') format('woff2'),
+       url('../../public/fonts/Satoshi-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Medium */
+@font-face {
+  font-family: 'jeearchive-login-font';
+  src: url('../../public/fonts/Satoshi-Medium.woff2') format('woff2'),
+       url('../../public/fonts/Satoshi-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* Bold */
+@font-face {
+  font-family: 'jeearchive-login-font';
+  src: url('../../public/fonts/Satoshi-Bold.woff2') format('woff2'),
+       url('../../public/fonts/Satoshi-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Black */
+@font-face {
+  font-family: 'jeearchive-login-font';
+  src: url('../../public/fonts/Satoshi-Black.woff2') format('woff2'),
+       url('../../public/fonts/Satoshi-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'jeearchive-login-font', sans-serif;
+}
+
+
+
+:root{
+    /* login, signup color definitions */
+    --login-background-color: #181823;
+    --login-box-1-color: #F94F39;
+    --login-box-2-color: #1E7CD3;
+    --login-box-3-color: #6B66DA;
+    --login-page-primary-text-color: #FAFAFC;
+    --login-page-secondary-text-color: #8B8AA0;
+    --input-background-color: #7976a439;
+    --input-border-color: #595F81;
+    --login-close-icon-color: #8b8aa0d5;
+}
