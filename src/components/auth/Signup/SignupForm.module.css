@@ -1,0 +1,39 @@
+
+.signupFormContainer{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.signupHeader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.signupForm{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.signupHeading{
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    width: 60%;
+    line-height: 1;
+    color: var(--login-page-primary-text-color);
+}
+
+.onboardingNavigation{
+    color: var(--login-page-primary-text-color);
+}
+
+.onboardingNavigationText{
+    color: var(--login-page-secondary-text-color);
+}

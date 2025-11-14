@@ -1,10 +1,13 @@
 'use client';
 
+import Styles from './ForgotPasswordForm.module.css';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { AuthInput } from '../AuthInput/AuthInput';
 import { AuthButton } from '../AuthButton/AuthButton';
 import { FormError } from '../FormError/FormError';
+import Logo from '../../../../public/images/logo.png';
 
 export function ForgotPasswordForm() {
   const [loading, setLoading] = useState(false);
@@ -41,25 +44,34 @@ export function ForgotPasswordForm() {
 
   if (success) {
     return (
-      <div className="space-y-6">
-        <div className="rounded-md bg-green-50 p-4">
-          <div className="flex">
-            <div className="shrink-0">
-              <svg className="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-            </div>
-            <div className="ml-3">
-              <h3 className="text-sm font-medium text-green-800">Check your email</h3>
-              <p className="mt-2 text-sm text-green-700">
-                We have sent a password reset link to your email address.
-              </p>
-            </div>
+      <div className={Styles.forgotPasswordFormContainer}>
+        <div className={Styles.forgotPasswordHeader}>
+          <Image 
+            src={Logo} 
+            alt="jeearchive-logo" 
+            width={60}
+            height={60}
+            className={Styles.logo}
+          />
+          <h2 className={Styles.forgotPasswordHeading}>Check your email</h2>
+        </div>
+
+        <div className={Styles.successMessage}>
+          <div className={Styles.successIcon}>
+            <svg className={Styles.iconSvg} viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+          </div>
+          <div className={Styles.successContent}>
+            <p className={Styles.successText}>
+              We have sent a password reset link to your email address. Please check your inbox and follow the instructions.
+            </p>
           </div>
         </div>
-        <div className="text-center">
-          <Link href="/login" className="text-sm text-blue-600 hover:text-blue-500 font-medium">
-            Back to login
+
+        <div className={Styles.backToLogin}>
+          <Link href="/login" className={`${Styles.onboardingNavigation} font-medium`}>
+            Back to <span className={Styles.loginNavigation}>login</span>
           </Link>
         </div>
       </div>
@@ -67,17 +79,24 @@ export function ForgotPasswordForm() {
   }
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h2 className="text-2xl font-bold text-gray-900">Reset your password</h2>
-        <p className="mt-2 text-sm text-gray-600">
+    <div className={Styles.forgotPasswordFormContainer}>
+      <div className={Styles.forgotPasswordHeader}>
+        <Image 
+          src={Logo} 
+          alt="jeearchive-logo" 
+          width={60}
+          height={60}
+          className={Styles.logo}
+        />
+        <h2 className={Styles.forgotPasswordHeading}>Reset your password</h2>
+        <p className={Styles.forgotPasswordSubtext}>
           Enter your email address and we will send you a link to reset your password.
         </p>
       </div>
 
       <FormError message={error} />
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className={Styles.forgotPasswordForm}>
         <AuthInput
           id="email"
           name="email"
@@ -88,12 +107,12 @@ export function ForgotPasswordForm() {
         />
 
         <AuthButton type="submit" loading={loading}>
-          Send reset link
+          <div className='font-medium'>Send reset link</div>
         </AuthButton>
 
-        <div className="text-center">
-          <Link href="/login" className="text-sm text-blue-600 hover:text-blue-500 font-medium">
-            Back to login
+        <div className={Styles.backToLogin}>
+          <Link href="/login" className={`${Styles.onboardingNavigation} font-medium`}>
+            Back to <span className={Styles.loginNavigation}>login</span>
           </Link>
         </div>
       </form>

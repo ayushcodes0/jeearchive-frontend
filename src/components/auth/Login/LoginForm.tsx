@@ -1,12 +1,14 @@
 'use client';
 
+import Styles from './LoginForm.module.css';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { AuthInput } from '../AuthInput/AuthInput';
 import { AuthButton } from '../AuthButton/AuthButton';
 import { FormError } from '../FormError/FormError';
-import { SocialAuth } from '../SocialAuth/SocialAuth';
+import Logo from '../../../../public/images/logo.png';
 
 export function LoginForm() {
   const router = useRouter();
@@ -43,20 +45,21 @@ export function LoginForm() {
   };
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h2 className="text-2xl font-bold text-gray-900">Sign in to your account</h2>
-        <p className="mt-2 text-sm text-gray-600">
-          Or{' '}
-          <Link href="/signup" className="text-blue-600 hover:text-blue-500 font-medium">
-            create a new account
-          </Link>
-        </p>
+    <div className={Styles.loginFormContainer}>
+      <div className={Styles.loginHeader}>
+        <Image 
+          src={Logo} 
+          alt="jeearchive-logo" 
+          width={60}
+          height={60}
+          className={Styles.logo}
+        />
+        <h2 className={Styles.loginHeading}>Welcome back</h2>
       </div>
 
       <FormError message={error} />
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className={Styles.loginForm}>
         <AuthInput
           id="email"
           name="email"
@@ -75,30 +78,37 @@ export function LoginForm() {
           placeholder="••••••••"
         />
 
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
+        <div className={Styles.formExtras}>
+          <div className={Styles.rememberMe}>
             <input
               id="remember-me"
               name="remember-me"
               type="checkbox"
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              className={Styles.checkbox}
             />
-            <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
+            <label htmlFor="remember-me" className={Styles.checkboxLabel}>
               Remember me
             </label>
           </div>
 
-          <Link href="/forgot-password" className="text-sm text-blue-600 hover:text-blue-500 font-medium">
+          <Link href="/forgot-password" className={Styles.forgotPassword}>
             Forgot password?
           </Link>
         </div>
 
+
         <AuthButton type="submit" loading={loading}>
-          Sign in
+          <div className='font-medium'>Sign in</div>
         </AuthButton>
+        <p className={Styles.onboardingNavigationText}>
+          Dont have an account?{' '}
+          <Link href="/signup" className={`${Styles.onboardingNavigation} font-medium`}>
+            Sign up
+          </Link>
+        </p>
       </form>
 
-      <SocialAuth />
+      {/* <SocialAuth /> */}
     </div>
   );
 }

@@ -1,12 +1,14 @@
 'use client';
 
+import Styles from './SignupForm.module.css';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { AuthInput } from '../AuthInput/AuthInput';
 import { AuthButton } from '../AuthButton/AuthButton';
 import { FormError } from '../FormError/FormError';
-import { SocialAuth } from '../SocialAuth/SocialAuth';
+import Logo from '../../../../public/images/logo.png';
 
 export function SignupForm() {
   const router = useRouter();
@@ -64,20 +66,20 @@ export function SignupForm() {
   };
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h2 className="text-2xl font-bold text-gray-900">Create your account</h2>
-        <p className="mt-2 text-sm text-gray-600">
-          Already have an account?{' '}
-          <Link href="/login" className="text-blue-600 hover:text-blue-500 font-medium">
-            Sign in
-          </Link>
-        </p>
+    <div className={Styles.signupFormContainer}>
+      <div className={Styles.signupHeader}>
+        <Image 
+          src={Logo} 
+          alt="jeearchive-logo" 
+          width={60} // Adjust as needed
+          height={60} // Adjust as needed
+          className={Styles.logo}
+        />
+        <h2 className={Styles.signupHeading}>Lets get started</h2>
       </div>
-
       <FormError message={error} />
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className={Styles.signupForm}>
         <AuthInput
           id="name"
           name="name"
@@ -118,28 +120,19 @@ export function SignupForm() {
           error={errors['confirm-password']}
         />
 
-        <div className="flex items-center">
-          <input
-            id="terms"
-            name="terms"
-            type="checkbox"
-            required
-            className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-          />
-          <label htmlFor="terms" className="ml-2 block text-sm text-gray-900">
-            I agree to the{' '}
-            <Link href="/terms" className="text-blue-600 hover:text-blue-500 font-medium">
-              Terms and Conditions
-            </Link>
-          </label>
-        </div>
 
         <AuthButton type="submit" loading={loading}>
-          Create account
+          <div className='font-medium'>Create account</div>
         </AuthButton>
+        <p className={Styles.onboardingNavigationText}>
+          Already have an account?{' '}
+          <Link href="/login" className={` ${Styles.onboardingNavigation} font-medium`}>
+            Sign in
+          </Link>
+        </p>
       </form>
 
-      <SocialAuth />
+      {/* <SocialAuth /> */}
     </div>
   );
 }
