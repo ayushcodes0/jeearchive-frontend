@@ -20,7 +20,7 @@
 }
 
 .verificationHeading {
-  font-size: 32px;
+  font-size: 42px;
   font-weight: 700;
   text-align: center;
   width: 60%;
@@ -38,7 +38,6 @@
   margin: 0;
 }
 
-/* Form */
 .verificationForm {
   width: 100%;
   display: flex;
@@ -46,7 +45,6 @@
   gap: 20px;
 }
 
-/* OTP Input Container */
 .otpContainer {
   display: flex;
   justify-content: center;
@@ -78,7 +76,6 @@
   border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Resend Section */
 .resendSection {
   text-align: center;
   margin-top: -8px;
@@ -105,7 +102,6 @@
   opacity: 0.8;
 }
 
-/* Navigation Text */
 .onboardingNavigationText {
   color: var(--login-page-secondary-text-color);
   text-align: center;
