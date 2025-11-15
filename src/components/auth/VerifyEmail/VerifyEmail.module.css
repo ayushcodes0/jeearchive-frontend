@@ -1,0 +1,162 @@
+/* Container */
+.verificationFormContainer {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Header Section */
+.verificationHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  margin-bottom: 8px;
+}
+
+.verificationHeading {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  width: 60%;
+  line-height: 1;
+  color: var(--login-page-primary-text-color);
+  letter-spacing: -1.2px;
+}
+
+.verificationSubtext {
+  font-size: 14px;
+  color: var(--login-page-secondary-text-color);
+  text-align: center;
+  width: 80%;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Form */
+.verificationForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* OTP Input Container */
+.otpContainer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.otpInput {
+  width: 48px;
+  height: 56px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--login-page-primary-text-color);
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.otpInput:focus {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.08);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.otpInput:not(:placeholder-shown) {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Resend Section */
+.resendSection {
+  text-align: center;
+  margin-top: -8px;
+}
+
+.resendText {
+  font-size: 14px;
+  color: var(--login-page-secondary-text-color);
+  margin: 0;
+}
+
+.resendButton {
+  background: none;
+  border: none;
+  color: var(--login-page-primary-text-color);
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  transition: opacity 0.2s;
+}
+
+.resendButton:hover {
+  opacity: 0.8;
+}
+
+/* Navigation Text */
+.onboardingNavigationText {
+  color: var(--login-page-secondary-text-color);
+  text-align: center;
+  font-size: 14px;
+  margin: 0;
+}
+
+.onboardingNavigation {
+  color: var(--login-page-primary-text-color);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.onboardingNavigation:hover {
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .verificationFormContainer {
+    width: 90%;
+  }
+
+  .verificationHeading {
+    font-size: 26px;
+    width: 80%;
+  }
+
+  .verificationSubtext {
+    width: 95%;
+  }
+
+  .otpContainer {
+    gap: 8px;
+  }
+
+  .otpInput {
+    width: 40px;
+    height: 48px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .otpContainer {
+    gap: 6px;
+  }
+
+  .otpInput {
+    width: 36px;
+    height: 44px;
+    font-size: 18px;
+  }
+}

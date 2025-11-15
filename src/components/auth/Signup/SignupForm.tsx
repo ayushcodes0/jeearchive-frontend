@@ -23,8 +23,8 @@ export function SignupForm() {
     setLoading(true);
 
     const formData = new FormData(e.currentTarget);
-    const name = formData.get('name') as string;
-    const email = formData.get('email') as string;
+    // const name = formData.get('name') as string;
+    // const email = formData.get('email') as string;
     const password = formData.get('password') as string;
     const confirmPassword = formData.get('confirm-password') as string;
 
@@ -47,17 +47,17 @@ export function SignupForm() {
 
     try {
       // TODO: Replace with actual API call
-      const response = await fetch('/api/auth/signup', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, password }),
-      });
+      // const response = await fetch('/api/auth/signup', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ name, email, password }),
+      // });
 
-      if (!response.ok) {
-        throw new Error('Email already exists');
-      }
+      // if (!response.ok) {
+      //   throw new Error('Email already exists');
+      // }
 
-      router.push('/dashboard');
+      router.push('/verify-email');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong');
     } finally {
