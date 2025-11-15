@@ -22,12 +22,13 @@
 }
 
 .signupHeading{
-    font-size: 32px;
+    font-size: 42px;
     font-weight: 700;
     text-align: center;
     width: 60%;
     line-height: 1;
     color: var(--login-page-primary-text-color);
+    letter-spacing: -1.2px;
 }
 
 .onboardingNavigation{

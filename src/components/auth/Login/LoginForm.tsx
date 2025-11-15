@@ -101,7 +101,7 @@ export function LoginForm() {
           <div className='font-medium'>Sign in</div>
         </AuthButton>
         <p className={Styles.onboardingNavigationText}>
-          Dont have an account?{' '}
+          {"Don't have an account?"}{' '}
           <Link href="/signup" className={`${Styles.onboardingNavigation} font-medium`}>
             Sign up
           </Link>

@@ -75,7 +75,7 @@ export function SignupForm() {
           height={60} // Adjust as needed
           className={Styles.logo}
         />
-        <h2 className={Styles.signupHeading}>Lets get started</h2>
+        <h2 className={Styles.signupHeading}>{"Let's get started"}</h2>
       </div>
       <FormError message={error} />
 
